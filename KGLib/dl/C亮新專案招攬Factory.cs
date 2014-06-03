@@ -40,7 +40,7 @@ namespace tw.com.kg.lib
             }
             else if ("B".Equals(p_str洗車別))
             {
-                l_sql += " where f_worktype in ('B1','B2','B3','B4','B5')";//只抓取覆膜代碼
+                l_sql += " where f_worktype in ('B1','B2','B3','B4','B5','W1','W2','W3','W4','W5','Y1','Y2','Y3','Y4','Y5')";//只抓取覆膜代碼
             }
 
 
