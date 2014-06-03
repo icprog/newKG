@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KGApp", "KGApp\KGApp.csproj", "{E2AB66E0-6BDB-4C85-81F4-DAA0D01192DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KGLib", "KGLib\KGLib.csproj", "{F774360A-1CC1-46C1-BE87-40D9AFDA0687}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KGUi", "KGUi\KGUi.csproj", "{737C1889-B9A0-42BC-A4A8-562112A408B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2AB66E0-6BDB-4C85-81F4-DAA0D01192DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2AB66E0-6BDB-4C85-81F4-DAA0D01192DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2AB66E0-6BDB-4C85-81F4-DAA0D01192DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2AB66E0-6BDB-4C85-81F4-DAA0D01192DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F774360A-1CC1-46C1-BE87-40D9AFDA0687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F774360A-1CC1-46C1-BE87-40D9AFDA0687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F774360A-1CC1-46C1-BE87-40D9AFDA0687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F774360A-1CC1-46C1-BE87-40D9AFDA0687}.Release|Any CPU.Build.0 = Release|Any CPU
+		{737C1889-B9A0-42BC-A4A8-562112A408B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{737C1889-B9A0-42BC-A4A8-562112A408B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{737C1889-B9A0-42BC-A4A8-562112A408B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{737C1889-B9A0-42BC-A4A8-562112A408B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

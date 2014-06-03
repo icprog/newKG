@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="KGUi.manager.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>未命名頁面</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../css/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../css/faceplant.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <script src="../js/jquery.js" type="text/javascript"></script>
+
+    <script src="../js/facebox.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('a[rel*=facebox]').facebox({
+        loading_image : './loading.gif',
+        close_image   : './closelabel.gif'
+      }) 
+    })
+  </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <table width="100%">
+            <tr>
+                <td colspan="2" style="background-image: ../images/index_bg.jpg" align="center">
+                    <img src="../images/index_t.jpg" width="800" height="183" />
+                </td>
+            </tr>
+            <tr>
+                <td width="15%" valign="top">
+                    <asp:Label ID="Label1" runat="server" Text="功能選單"></asp:Label>
+                    <br />
+                    <asp:TreeView ID="TreeView1" runat="server">
+                        <Nodes>
+                            <asp:TreeNode Text="參數設定" Value="參數設定">
+                                <asp:TreeNode NavigateUrl="~/manager/FrmSetInsurance.aspx" Text="保險設定" Value="保險設定">
+                                </asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/manager/FrmSetWorkType.aspx" Text="洗車種類設定" Value="洗車種類設定">
+                                </asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/manager/FrmSetUser.aspx" Text="人員設定" Value="人員設定"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="實績報表" Value="實績報表">
+                                <asp:TreeNode NavigateUrl="~/manager/FrmSelectWork.aspx" Text="工單查詢" Value="工單查詢">
+                                </asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/manager/FrmAmtReport.aspx" Text="薪資報表" Value="薪資報表">
+                                </asp:TreeNode>
+                            </asp:TreeNode>
+                        </Nodes>
+                    </asp:TreeView>
+                </td>
+                <td width="85%" align="left" valign="top">
+                    <table>
+                        <tr>
+                            <td>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

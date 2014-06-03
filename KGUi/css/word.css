@@ -1,0 +1,22 @@
+@charset "utf-8";
+.w1 {
+	font-size: 16px;
+	color: #FFFFFF;
+}
+
+.w2 {
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+.b1 {
+	font-size: 16px;
+	color: #FFFF00;
+	text-decoration: none;
+}
+
+.b1 a:hover {
+	font-size: 16px;
+	color: #FF0000;
+	text-decoration: none;
+}

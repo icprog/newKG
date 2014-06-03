@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F774360A-1CC1-46C1-BE87-40D9AFDA0687}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KGLib</RootNamespace>
+    <AssemblyName>KGLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YJCommonLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CFactoryManager.cs" />
+    <Compile Include="CUIContext.cs" />
+    <Compile Include="dl\CClock.cs" />
+    <Compile Include="dl\CClockFactory.cs" />
+    <Compile Include="dl\CConstruction.cs" />
+    <Compile Include="dl\CConstructionFactory.cs" />
+    <Compile Include="dl\CEngno.cs" />
+    <Compile Include="dl\CEngnoFactory.cs" />
+    <Compile Include="dl\CInMoney.cs" />
+    <Compile Include="dl\CInMoneyDetail.cs" />
+    <Compile Include="dl\CInMoneyDetailFactory.cs" />
+    <Compile Include="dl\CInMoneyFactory.cs" />
+    <Compile Include="dl\CInsurance.cs" />
+    <Compile Include="dl\CInsuranceFactory.cs" />
+    <Compile Include="dl\CKGPart.cs" />
+    <Compile Include="dl\CKGPartFactory.cs" />
+    <Compile Include="dl\CKGPartOrder.cs" />
+    <Compile Include="dl\CKGPartOrderDetail.cs" />
+    <Compile Include="dl\CKGPartOrderDetailFactory.cs" />
+    <Compile Include="dl\CKGPartOrderDetailOut.cs" />
+    <Compile Include="dl\CKGPartOrderDetailOutFactory.cs" />
+    <Compile Include="dl\CKGPartOrderFactory.cs" />
+    <Compile Include="dl\CKGPartOrderMail.cs" />
+    <Compile Include="dl\CKGPoint.cs" />
+    <Compile Include="dl\CKGPointDetail.cs" />
+    <Compile Include="dl\CKGPointDetailFactory.cs" />
+    <Compile Include="dl\CKGPointFactory.cs" />
+    <Compile Include="dl\CSatisfaction.cs" />
+    <Compile Include="dl\CSatisfactionFactory.cs" />
+    <Compile Include="dl\CTestDrive.cs" />
+    <Compile Include="dl\CTestDriveFactory.cs" />
+    <Compile Include="dl\CUser.cs" />
+    <Compile Include="dl\CUserFactory.cs" />
+    <Compile Include="dl\CWork.cs" />
+    <Compile Include="dl\CWorkFactory.cs" />
+    <Compile Include="dl\CWorkType.cs" />
+    <Compile Include="dl\CWorkTypeFactory.cs" />
+    <Compile Include="dl\C亮新專案招攬.cs" />
+    <Compile Include="dl\C亮新專案招攬Factory.cs" />
+    <Compile Include="dl\C保險實績統計.cs" />
+    <Compile Include="dl\C保險實績統計Factory.cs" />
+    <Compile Include="dl\C台數統計.cs" />
+    <Compile Include="dl\C台數統計Factory.cs" />
+    <Compile Include="dl\C各廠介紹獎金.cs" />
+    <Compile Include="dl\C各廠介紹獎金Factory.cs" />
+    <Compile Include="dl\C小百貨產品銷售排行.cs" />
+    <Compile Include="dl\C小百貨產品銷售排行Factory.cs" />
+    <Compile Include="dl\C小百貨銷售明細.cs" />
+    <Compile Include="dl\C小百貨銷售明細Factory.cs" />
+    <Compile Include="dl\C工單實績.cs" />
+    <Compile Include="dl\C工單實績Factory.cs" />
+    <Compile Include="dl\C欠款紀錄.cs" />
+    <Compile Include="dl\C欠款紀錄Factory.cs" />
+    <Compile Include="dl\C薪資計算.cs" />
+    <Compile Include="dl\C薪資計算Factory.cs" />
+    <Compile Include="dl\特販審核.cs" />
+    <Compile Include="dl\特販審核Factory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SealedGlobalPage.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
