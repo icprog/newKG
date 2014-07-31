@@ -120,7 +120,7 @@
                     Width="211px" Font-Bold="True" Font-Size="16pt"></asp:TextBox></td>
           </tr> 
           <tr>
-            <td>服務專員1</td>
+            <td>服務專員</td>
             <td><asp:TextBox ID="_txt服務專員" runat="server" Height="30px" 
                     Width="77px" Font-Bold="True" Font-Size="16pt" AutoPostBack="True" 
                     ontextchanged="_txt服務專員_TextChanged"></asp:TextBox>

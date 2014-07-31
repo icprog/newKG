@@ -55,6 +55,28 @@ namespace KGUi.insert
             if ("新車".Equals(_lbl工單種類.Text) || "員工".Equals(_lbl工單種類.Text) || "試乘".Equals(_lbl工單種類.Text) || "購車周年".Equals(_lbl工單種類.Text))
             {
                 _rdo是否招攬.Enabled = false;
+                if ("新車".Equals(_lbl工單種類.Text))
+                {
+                    _ddl洗車種類0.Items.Clear();
+                    _ddl洗車種類0.Items.Add(new ListItem("R_精緻洗車", "R"));
+                    _ddl洗車種類0.Items.Add(new ListItem("M_磁土美容", "M"));
+                    _ddl洗車種類0.Items.Add(new ListItem("S_超值美容", "S"));
+                    _ddl洗車種類0.Items.Add(new ListItem("A_小美容", "A"));
+                    _ddl洗車種類0.Items.Add(new ListItem("B_覆膜專案", "B"));
+                    _ddl洗車種類0.Items.Add(new ListItem("L_亮新專案", "L"));
+                    _ddl洗車種類0.Items.Add(new ListItem("N_亮新專案Ⅱ", "N"));
+                    _ddl洗車種類0.Items.Add(new ListItem("I_內裝美容", "I"));
+                    _ddl洗車種類0.Items.Add(new ListItem("E_引擎室深度清潔", "E"));
+                    _ddl洗車種類0.Items.Add(new ListItem("G_玻璃油膜處理", "G"));
+                    _ddl洗車種類0.Items.Add(new ListItem("C_速霸陸/馬自達 磁土美容", "C"));
+                    _ddl洗車種類0.Items.Add(new ListItem("J_速霸陸/馬自達 小美容", "J"));
+                    _ddl洗車種類0.Items.Add(new ListItem("P_速霸陸/馬自達 覆膜處理", "P"));
+                    _ddl洗車種類0.Items.Add(new ListItem("T_速霸陸/馬自達 新車覆膜", "T"));
+                    _ddl洗車種類0.Items.Add(new ListItem("K_速霸陸/馬自達 大美容", "K"));
+                    _ddl洗車種類0.Items.Add(new ListItem("H_速霸陸/馬自達 內裝美容", "H"));
+                    _ddl洗車種類0.Items.Add(new ListItem("F_速霸陸/馬自達 引擎室深度清潔", "F"));
+                    _ddl洗車種類0.Items.Add(new ListItem("D_和榮", "D00"));
+                }
                 
             }
             if (!"新車".Equals(_lbl工單種類.Text) )
@@ -65,6 +87,17 @@ namespace KGUi.insert
             if ("新車".Equals(_lbl工單種類.Text) || "試乘".Equals(_lbl工單種類.Text))
             {
                 _txt服務專員.Enabled = false;
+            }
+            if ("新車保值計畫(TN覆膜)".Equals(_lbl工單種類.Text))
+            {
+                _rdo是否招攬.Enabled = false;
+                _rdo是否招攬.SelectedValue = "是";
+                _txt介紹人.Visible = true;
+
+                _ddl洗車種類0.Items.Clear();
+
+                _ddl洗車種類0.Items.Add(new ListItem("W_保值(新車,TN腹膜)", "W"));
+                _ddl洗車種類0.Items.Add(new ListItem("Y_保值(需拋光,TN腹膜)", "Y"));
             }
 
         }
@@ -80,6 +113,7 @@ namespace KGUi.insert
                 case "4": _lbl工單種類.Text = "員工"; return;
                 case "5": _lbl工單種類.Text = "試乘"; return;
                 case "6": _lbl工單種類.Text = "購車周年"; return;
+                case "7": _lbl工單種類.Text = "新車保值計畫(TN覆膜)"; return;
             }
 
         }

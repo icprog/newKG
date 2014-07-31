@@ -120,5 +120,16 @@ namespace KGUi.insert
             }
             Response.Redirect("./FrmInsertWork.aspx?type=24");
         }
+
+        protected void _btn新車保值計畫_Click(object sender, ImageClickEventArgs e)
+        {
+            CUser l_user = Session[SealedGlobalPage.SESSIONKEY_LOGIN_USER_DATA] as CUser;
+            if (l_user.f_branch所別名稱.IndexOf("所") > 0)
+            {
+                ScriptManager.RegisterClientScriptBlock(UpdatePanel1, typeof(UpdatePanel), "OK", "alert('沒有開立新車保值計畫!!');", true);
+                return;
+            }
+            Response.Redirect("./FrmInsertWork.aspx?type=7");
+        }
     }
 }

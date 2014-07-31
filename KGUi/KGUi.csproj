@@ -74,11 +74,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FrmLogin.aspx" />
+    <Content Include="images\0722_新車.jpg" />
     <Content Include="insert\FrmHistory.aspx" />
     <Content Include="insert\FrmIndex.aspx" />
     <Content Include="insert\FrmInsertWork.aspx" />
     <Content Include="insert\FrmPrintWork.aspx" />
     <Content Include="insert\FrmWorkType.aspx" />
+    <Content Include="manager\money\FrmOrderidDetail.aspx" />
+    <Content Include="manager\money\FrmWorkidDetail.aspx" />
     <Content Include="update\FrmAddConstruction.aspx" />
     <Content Include="update\FrmCloseWork.aspx" />
     <Content Include="update\FrmHistory.aspx" />
@@ -337,6 +340,20 @@
     </Compile>
     <Compile Include="manager\money\FrmInMoneyPrint.aspx.designer.cs">
       <DependentUpon>FrmInMoneyPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\money\FrmOrderidDetail.aspx.cs">
+      <DependentUpon>FrmOrderidDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\money\FrmOrderidDetail.aspx.designer.cs">
+      <DependentUpon>FrmOrderidDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\money\FrmWorkidDetail.aspx.cs">
+      <DependentUpon>FrmWorkidDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\money\FrmWorkidDetail.aspx.designer.cs">
+      <DependentUpon>FrmWorkidDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="manager\part\FrmInsertKGPart.aspx.cs">
       <DependentUpon>FrmInsertKGPart.aspx</DependentUpon>

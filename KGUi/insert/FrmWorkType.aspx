@@ -111,7 +111,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td></td>
+                                                <td>
+                                                    <asp:ImageButton ID="_btn新車保值計畫" ImageUrl="../images/0722_新車.jpg" runat="server" border="0" OnClick="_btn新車保值計畫_Click"  />
+                                                </td>
                                                 <td>
                                                     <asp:ImageButton ID="_btn一般" ImageUrl="../images/assistant_p1_b3.gif" runat="server"
                                                         border="0" OnClick="_btn一般_Click" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('_btn一般','','../images/assistant_p1_b3_2.gif',1)" />
