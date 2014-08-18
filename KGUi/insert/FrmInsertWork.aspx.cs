@@ -58,6 +58,7 @@ namespace KGUi.insert
                 if ("新車".Equals(_lbl工單種類.Text))
                 {
                     _ddl洗車種類0.Items.Clear();
+                    _ddl洗車種類0.Items.Add(new ListItem("", ""));
                     _ddl洗車種類0.Items.Add(new ListItem("R_精緻洗車", "R"));
                     _ddl洗車種類0.Items.Add(new ListItem("M_磁土美容", "M"));
                     _ddl洗車種類0.Items.Add(new ListItem("S_超值美容", "S"));
@@ -95,7 +96,7 @@ namespace KGUi.insert
                 _txt介紹人.Visible = true;
 
                 _ddl洗車種類0.Items.Clear();
-
+                _ddl洗車種類0.Items.Add(new ListItem("", ""));
                 _ddl洗車種類0.Items.Add(new ListItem("W_保值(新車,TN腹膜)", "W"));
                 _ddl洗車種類0.Items.Add(new ListItem("Y_保值(需拋光,TN腹膜)", "Y"));
             }
