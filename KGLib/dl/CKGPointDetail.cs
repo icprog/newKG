@@ -102,5 +102,11 @@ namespace tw.com.kg.lib
             set { iv_strBranch所別 = value; }
         }
 
+        private string iv_strf_Memo = "";
+        public string f_Memo
+        {
+            get { return iv_strf_Memo; }
+            set { iv_strf_Memo = value; }
+        }
     }
 }

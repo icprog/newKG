@@ -61,7 +61,7 @@ namespace tw.com.kg.lib
         /// <returns></returns>
         public CKGPointDetail[] getCKGPointDetailBy條件(string p_str所別,string p_str業代員編, string p_str匯入方式,string p_str入帳銀行, string p_strStartDay, string p_strEndDay)
         {
-            string l_strSql = "SELECT f_id,f_Smid,f_Name,Branch='F'+Substring(T.Branchid,5,2),f_ImportPoint,f_ImportDate,f_ImportSmid,f_ImportName,f_ImportType,f_InMoneyBank,f_InvoiceNo,f_PayBank,f_BankCharge";
+            string l_strSql = "SELECT f_id,f_Smid,f_Name,Branch='F'+Substring(T.Branchid,5,2),f_ImportPoint,f_ImportDate,f_ImportSmid,f_ImportName,f_ImportType,f_InMoneyBank,f_InvoiceNo,f_PayBank,f_BankCharge, f_Memo";
             l_strSql += " FROM [KG].[dbo].[tbKGPointDetail] K ";
             l_strSql += " INNER JOIN [kdnews].[dbo].[T_HRPersonel] T ";
             l_strSql += " ON K.f_Smid = T.Emp_id WHERE 1=1";
@@ -118,6 +118,7 @@ namespace tw.com.kg.lib
                    l_code.f_PayBank刷卡銀行 = l_dv[i]["f_PayBank"].ToString();
                    l_code.f_BankCharge手續費 = Convert.ToInt32(l_dv[i]["f_BankCharge"].ToString());
                    l_code.f_InMoneyBank入帳銀行 = l_dv[i]["f_InMoneyBank"].ToString();
+                   l_code.f_Memo = l_dv[i]["f_Memo"].ToString();
                    l_datas.Add(l_code);
                 }
                 return l_datas.ToArray();
@@ -126,6 +127,15 @@ namespace tw.com.kg.lib
             {
                 return null;
             }
+        }
+
+        public void SetMemo(string pMemo, string pId) 
+        {
+            StringBuilder lsb = new StringBuilder();
+            lsb.Append(" UPDATE [KG].[dbo].[tbKGPointDetail] SET f_Memo = '" + pMemo + "' ");
+            lsb.Append(" WHERE f_id = '" + pId + "' ");
+
+            ivContext.資料管理員.excuteSqlNonquery(lsb.ToString());
         }
 
         private CKGPointDetail[] queryBySql(string p_sql)
@@ -187,7 +197,7 @@ namespace tw.com.kg.lib
 
         public void insertCKGPointDetail(CKGPointDetail p_code)
         {
-            string l_strSql = "INSERT INTO [KG].[dbo].[tbKGPointDetail] ([f_Smid],[f_Name],[f_ImportPoint],[f_ImportDate],[f_ImportSmid],[f_ImportName],[f_ImportType],[f_InvoiceNo],[f_PayBank],[f_BankCharge],[f_InMoneyBank])VALUES(";
+            string l_strSql = "INSERT INTO [KG].[dbo].[tbKGPointDetail] ([f_Smid],[f_Name],[f_ImportPoint],[f_ImportDate],[f_ImportSmid],[f_ImportName],[f_ImportType],[f_InvoiceNo],[f_PayBank],[f_BankCharge],[f_InMoneyBank],[f_Memo])VALUES(";
             l_strSql += " '" + p_code.f_Smid業代員編 + "' ";
             l_strSql += ", N'" + p_code.f_Name業代姓名 + "' ";
             l_strSql += ", '" + p_code.f_ImportPoint匯入點數 + "' ";
@@ -199,6 +209,7 @@ namespace tw.com.kg.lib
             l_strSql += ", '" + p_code.f_PayBank刷卡銀行 + "' ";
             l_strSql += ", '" + p_code.f_BankCharge手續費 + "' ";
             l_strSql += ", '" + p_code.f_InMoneyBank入帳銀行 + "' ";
+            l_strSql += ", '" + p_code.f_Memo + "' ";
             l_strSql += ")";
 
             ivContext.資料管理員.excuteSqlNonquery(l_strSql);

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Configuration;
 using tw.com.yj.CommonLib;
+using KGLib.dl;
 
 namespace tw.com.kg.lib
 {
@@ -293,7 +294,19 @@ namespace tw.com.kg.lib
             }
         }
 
+        private OffDutyFactory _OffDutyFactory;
+        public OffDutyFactory OffDutyFactory 
+        {
+            get 
+            {
+                if (_OffDutyFactory == null)
+                {
+                    _OffDutyFactory = new OffDutyFactory(_context);
+                }
+                return _OffDutyFactory;
+            }
         
+        }
         
     }
 

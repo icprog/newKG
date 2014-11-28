@@ -40,6 +40,9 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -107,10 +110,15 @@
     <Compile Include="dl\C欠款紀錄Factory.cs" />
     <Compile Include="dl\C薪資計算.cs" />
     <Compile Include="dl\C薪資計算Factory.cs" />
+    <Compile Include="dl\OffDutyFactory.cs" />
     <Compile Include="dl\特販審核.cs" />
     <Compile Include="dl\特販審核Factory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SealedGlobalPage.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.Config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
