@@ -80,6 +80,7 @@
     <Content Include="insert\FrmInsertWork.aspx" />
     <Content Include="insert\FrmPrintWork.aspx" />
     <Content Include="insert\FrmWorkType.aspx" />
+    <Content Include="manager\FrmEmpOffDutyManage.aspx" />
     <Content Include="manager\money\FrmOrderidDetail.aspx" />
     <Content Include="manager\money\FrmWorkidDetail.aspx" />
     <Content Include="update\FrmAddConstruction.aspx" />
@@ -193,6 +194,13 @@
     </Compile>
     <Compile Include="manager\FrmAmtReportDetail.aspx.designer.cs">
       <DependentUpon>FrmAmtReportDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\FrmEmpOffDutyManage.aspx.cs">
+      <DependentUpon>FrmEmpOffDutyManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\FrmEmpOffDutyManage.aspx.designer.cs">
+      <DependentUpon>FrmEmpOffDutyManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="manager\FrmIndex.aspx.cs">
       <DependentUpon>FrmIndex.aspx</DependentUpon>
@@ -695,6 +703,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\fox.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

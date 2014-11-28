@@ -58,7 +58,7 @@
         </table>
         <br />
         <asp:Label ID="_lbl業代資料" runat="server" Font-Bold="True" Font-Size="Larger" ForeColor="Brown">請購者資料:OO所 XXX</asp:Label>
-        <asp:Label ID="_lblSmid" runat="server" Text="Label" Visible="False"></asp:Label>
+        <asp:Label ID="_lblSmid" runat="server" Text="Label" Visible="True"></asp:Label>
         <br />
         <table>
             <tr>

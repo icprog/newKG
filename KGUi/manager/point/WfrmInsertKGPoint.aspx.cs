@@ -183,6 +183,7 @@ namespace KGUi.manager.money
             l_code紀錄.f_InvoiceNo發票號碼 = iv_txt發票號碼.Text.Trim();
             l_code紀錄.f_PayBank刷卡銀行 = iv_cbo刷卡銀行.SelectedValue;
             l_code紀錄.f_InMoneyBank入帳銀行 = iv_cbo入帳銀行.SelectedValue;
+            l_code紀錄.f_Memo = txtMemo.Text;
             try
             {
                 if ("刷卡儲值".Equals(iv_cbo儲值方式.SelectedValue))

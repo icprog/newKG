@@ -64,11 +64,28 @@ namespace KGUi.part
             {
                 CUser l_user = _context.CFactoryManager.CUserFactory.get高都員工檔(l_strSmid);
                 _lblSmid.Text = l_strSmid.ToUpper();
-                _lbl業代資料.Text = l_user.f_branchid所別 + " / " + l_user.f_username姓名;
-                get下拉式選單內容("");
-                初始化();
+                DataTable dt = _context.CFactoryManager.OffDutyFactory.GetData(l_strSmid);
+
+                if (dt.Rows.Count > 0)
+                {
+                    _txt業代員編.Text = "";
+                    iv_lblErrorMsg.Text = "此員工已經離職";
+                    _lblSmid.Text = "";
+                    ScriptManager.RegisterClientScriptBlock(UpdatePanel1, typeof(UpdatePanel), "OK", "alert('此員工已經離職');", true);
+                }
+                else
+                {
+                    _lbl業代資料.Text = l_user.f_branchid所別 + " / " + l_user.f_username姓名;
+                    get下拉式選單內容("");
+                    初始化();
+                }
             }
-            catch { iv_lblErrorMsg.Text = "無此員工!!請重新確認"; }
+            catch 
+            {
+                iv_lblErrorMsg.Text = "無此員工!!請重新確認";
+                //清空原編
+                _lblSmid.Text = "";
+            }
         }
 
         private void get下拉式選單內容(string p_str)
@@ -199,6 +216,12 @@ namespace KGUi.part
 
         protected void iv_btn加入選購清單_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(_lblSmid.Text))
+            {
+                ScriptManager.RegisterClientScriptBlock(UpdatePanel1, typeof(UpdatePanel), "OK", "請選擇輸入正確的員工編號", true);
+                return;
+            }
+
             if ("".Equals(_txt數量.Text.Trim()))
             {
                 //ScriptManager.RegisterClientScriptBlock(UpdatePanel2, typeof(UpdatePanel), "OK", "alert('請輸入數量!!')", true);
@@ -217,8 +240,15 @@ namespace KGUi.part
                     }
                 }
                 catch { ScriptManager.RegisterClientScriptBlock(UpdatePanel1, typeof(UpdatePanel), "OK", "金額格式錯誤", true);return; }
-                
-                把請購的資料加入DataTable();
+
+                if (!String.IsNullOrEmpty(_lblSmid.Text))
+                {
+                    把請購的資料加入DataTable();
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(UpdatePanel1, typeof(UpdatePanel), "OK", "請選擇正確的員工編號", true);
+                }
             }
         }
 

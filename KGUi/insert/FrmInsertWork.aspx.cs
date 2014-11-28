@@ -262,12 +262,24 @@ namespace KGUi.insert
         }
         protected void _txt顧客名稱_TextChanged(object sender, EventArgs e)
         {
+            
             try
             {
                 if ("新車".Equals(_lbl工單種類.Text) || "試乘".Equals(_lbl工單種類.Text))
                 {
                     CUser l_user = get高都員工(_txt顧客名稱.Text.Trim());
-                    _lbl新車員工.Text = l_user.f_branchid所別 + " / " + l_user.f_username姓名;
+                    DataTable dt = _context.CFactoryManager.OffDutyFactory.GetData(_txt顧客名稱.Text);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        _txt顧客名稱.Text = "";
+                        ScriptManager.RegisterClientScriptBlock(UpdatePanel1, typeof(UpdatePanel), "OK", "alert('此員工已經離職');", true);
+                    }
+                    else
+                    {
+                        _lbl新車員工.Text = l_user.f_branchid所別 + " / " + l_user.f_username姓名;
+                    }
+                    
                 }
             }
             catch
@@ -283,7 +295,17 @@ namespace KGUi.insert
             try
             {
                 CUser l_user = get高都員工(_txt介紹人.Text.Trim());
-                _lbl新車員工1.Text = l_user.f_branchid所別 + " / " + l_user.f_username姓名;
+                DataTable dt = _context.CFactoryManager.OffDutyFactory.GetData(_txt顧客名稱.Text);
+
+                if (dt.Rows.Count > 0)
+                {
+                    _lbl新車員工1.Text = "";
+                    ScriptManager.RegisterClientScriptBlock(UpdatePanel1, typeof(UpdatePanel), "OK", "alert('此員工已經離職');", true);
+                }
+                else
+                {
+                    _lbl新車員工1.Text = l_user.f_branchid所別 + " / " + l_user.f_username姓名;
+                }
             }
             catch
             {

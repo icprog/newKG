@@ -116,6 +116,16 @@
                         <td align="center" colspan="2" style="background-color: #eaeaea">
                             <asp:Button ID="iv_btn儲值" runat="server" OnClick="iv_btn儲值_Click" Text="儲值" Width="70px" /></td>
                     </tr>
+                    <tr>
+                        <td  style="background-color: #87c5f4">
+                            <asp:Label ID="Label7" runat="server" Font-Bold="False" Style="position: static"
+                                Text="備註" Width="64px"></asp:Label>
+                        </td>
+                        <td colspan="13">
+                            <asp:TextBox ID="txtMemo" runat="server" TextMode="MultiLine"></asp:TextBox>
+
+                        </td>
+                    </tr>
                 </table>
                     <br />
                     <br />

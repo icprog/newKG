@@ -85,7 +85,80 @@
                     &nbsp;<br />
                     <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="White"
                         BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" Font-Size="Smaller"
-                        GridLines="None" OnRowDataBound="GridView1_RowDataBound" ShowFooter="True">
+                        GridLines="None" OnRowDataBound="GridView1_RowDataBound" ShowFooter="True" AutoGenerateColumns="False" EnableModelValidation="True" DataKeyNames="f_id">
+                        <Columns>
+                            <asp:TemplateField HeaderText="項次">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_id" runat="server" Text='<%# Bind("f_id") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="所別">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbBranch" runat="server" Text='<%# Bind("Branch所別") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="員編">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_Smid" runat="server" Text='<%# Bind("f_Smid業代員編") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="姓名">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_Name" runat="server" Text='<%# Bind("f_Name業代姓名") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="匯入點數">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_ImportPoint" runat="server" Text='<%# Bind("f_ImportPoint匯入點數") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="匯入日期">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_ImportDate" runat="server" Text='<%# Bind("f_ImportDate匯入日期") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="匯入者員編">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_ImportSmid" runat="server" Text='<%# Bind("f_ImportSmid匯入人員員編") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="匯入者姓名">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_ImportName" runat="server" Text='<%# Bind("f_ImportName匯入人員姓名") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="匯入方式">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_ImportType" runat="server" Text='<%# Bind("f_ImportType匯入方式") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="刷卡銀行">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_PayBank" runat="server" Text='<%# Bind("f_PayBank刷卡銀行") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="手續費">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_BankCharge" runat="server" Text='<%# Bind("f_BankCharge手續費") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="發票號碼">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_InvoiceNo" runat="server" Text='<%# Bind("f_InvoiceNo發票號碼") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="入帳銀行">
+                                <ItemTemplate>
+                                    <asp:Label ID="lbf_InMoneyBank" runat="server" Text='<%# Bind("f_InMoneyBank入帳銀行") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="備註">
+                                <ItemTemplate>
+                                    <asp:TextBox ID="txtMemo" runat="server" Text='<%# Bind("f_Memo") %>' AutoPostBack="True" OnTextChanged="txtMemo_TextChanged"></asp:TextBox>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+
                         <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
                         <RowStyle BackColor="#DEDFDE" ForeColor="Black" HorizontalAlign="Center" />
                         <SelectedRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />

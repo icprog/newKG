@@ -21,7 +21,7 @@
                                 <asp:TreeNode NavigateUrl="~/manager/FrmSetWorkType.aspx" Text="洗車種類設定" Value="洗車種類設定" Target="Operating">
                                 </asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/manager/FrmSetUser.aspx" Text="人員設定" Value="人員設定" Target="Operating"></asp:TreeNode>
-                            
+                                <asp:TreeNode NavigateUrl="~/manager/FrmEmpOffDutyManage.aspx" Text="離職人員新增" Value="離職人員新增" Target="Operating"></asp:TreeNode>
                                 <asp:TreeNode NavigateUrl="~/manager/part/FrmInsertKGPart.aspx" Text="小百貨產品新增" Value="小百貨產品新增" Target="Operating">
                                 </asp:TreeNode>
                             

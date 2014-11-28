@@ -90,13 +90,13 @@ namespace KGUi.manager.point
         }
         private void display(CKGPointDetail[] p_codes)
         {
-            GridView1.DataSource = getDataTableBydisplay(p_codes);
+            GridView1.DataSource = p_codes.ToList();
             GridView1.DataBind();
         }
 
         private DataTable getDataTableBydisplay(CKGPointDetail[] p_codes)
         {
-            string[] l_str = { "項次", "所別", "員編", "姓名", "匯入點數", "匯入日期", "匯入者員編", "匯入者姓名", "匯入方式", "刷卡銀行", "手續費", "發票號碼", "入帳銀行" };
+            string[] l_str = { "項次", "所別", "員編", "姓名", "匯入點數", "匯入日期", "匯入者員編", "匯入者姓名", "匯入方式", "刷卡銀行", "手續費", "發票號碼", "入帳銀行", "備註" };
 
             DataTable l_table = CTools.getFilledColumnsDataTable(l_str);
 
@@ -123,7 +123,7 @@ namespace KGUi.manager.point
                 l_row["手續費"] = p_codes[i].f_BankCharge手續費;
                 l_row["發票號碼"] = p_codes[i].f_InvoiceNo發票號碼;
                 l_row["入帳銀行"] = p_codes[i].f_InMoneyBank入帳銀行;
-
+                l_row["備註"] = p_codes[i].f_Memo;
                 l_table.Rows.Add(l_row);
             }
 
@@ -136,8 +136,8 @@ namespace KGUi.manager.point
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                iv_intSumTotal += Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "匯入點數"));
-                iv_intSum手續費 += Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "手續費"));
+                iv_intSumTotal += Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "f_ImportPoint匯入點數"));
+                iv_intSum手續費 += Convert.ToInt32(DataBinder.Eval(e.Row.DataItem, "f_BankCharge手續費"));
             }
             else if (e.Row.RowType == DataControlRowType.Footer)
             {
@@ -168,5 +168,18 @@ namespace KGUi.manager.point
             //    ScriptManager.RegisterClientScriptBlock(UpdatePanel1, typeof(UpdatePanel), "OK", "alert('匯出失敗，請先查詢資料後再進行匯出作業');", true);
             //}
         }
+
+        protected void txtMemo_TextChanged(object sender, EventArgs e)
+        {
+            TextBox ltxtMemo = (TextBox)sender;
+
+            GridViewRow lR = (GridViewRow)ltxtMemo.Parent.Parent;
+
+            var lKeys = this.GridView1.DataKeys[lR.RowIndex].Value.ToString();
+            CKGPointDetailFactory l_factory = iv_context.CFactoryManager.CKGPointDetailFactory;
+
+            l_factory.SetMemo(ltxtMemo.Text, lKeys.ToString());
+        }
+
     }
 }
