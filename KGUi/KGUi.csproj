@@ -75,6 +75,12 @@
   <ItemGroup>
     <Content Include="FrmLogin.aspx" />
     <Content Include="images\0722_新車.jpg" />
+    <Content Include="images\assistant_index_button11-2.gif" />
+    <Content Include="images\assistant_index_button11.gif" />
+    <Content Include="images\assistant_index_button111-2.gif" />
+    <Content Include="images\assistant_index_button111.gif" />
+    <Content Include="images\assistant_p1_b24.gif" />
+    <Content Include="images\assistant_p1_b24_2.gif" />
     <Content Include="insert\FrmHistory.aspx" />
     <Content Include="insert\FrmIndex.aspx" />
     <Content Include="insert\FrmInsertWork.aspx" />
