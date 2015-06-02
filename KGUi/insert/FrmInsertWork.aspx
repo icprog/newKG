@@ -156,27 +156,29 @@
             <asp:DropDownList ID="_ddl洗車種類0" runat="server" OnSelectedIndexChanged="_ddl洗車種類0_SelectedIndexChanged" 
                     Width="150px" Font-Bold="True" Font-Size="12pt" AutoPostBack="True">
                     <asp:ListItem Value=""></asp:ListItem>
-                                                    <asp:ListItem Value="R">R_精緻洗車</asp:ListItem>
-                                                    <asp:ListItem Value="M">M_磁土美容</asp:ListItem>
-                                                    <asp:ListItem Value="S">S_超值美容</asp:ListItem>
-                                                    <asp:ListItem Value="A">A_小美容</asp:ListItem>
-                                                    <asp:ListItem Value="B">B_覆膜專案</asp:ListItem>
-                                                    <asp:ListItem Value="L">L_亮新專案</asp:ListItem>
-                                                    <asp:ListItem Value="N">N_亮新專案Ⅱ</asp:ListItem>
-                                                    <asp:ListItem Value="I">I_內裝美容</asp:ListItem>
-                                                    <asp:ListItem Value="E">E_引擎室深度清潔</asp:ListItem>
-                                                    <asp:ListItem Value="G">G_玻璃油膜處理</asp:ListItem>
-                                                    <asp:ListItem Value="C">C_速霸陸/馬自達 磁土美容</asp:ListItem>
-                                                    <asp:ListItem Value="J">J_速霸陸/馬自達 小美容</asp:ListItem>
-                                                    <asp:ListItem Value="P">P_速霸陸/馬自達 覆膜處理</asp:ListItem>
-                                                    <asp:ListItem Value="T">T_速霸陸/馬自達 新車覆膜</asp:ListItem>
-                                                    <asp:ListItem Value="K">K_速霸陸/馬自達 大美容</asp:ListItem>
-                                                    <asp:ListItem Value="H">H_速霸陸/馬自達 內裝美容</asp:ListItem>
-                                                    <asp:ListItem Value="F">F_速霸陸/馬自達 引擎室深度清潔</asp:ListItem>
-                                                    <asp:ListItem Value="D00">D_和榮</asp:ListItem>
-                                                    <asp:ListItem Value="W">W_保值(新車,TN腹膜)</asp:ListItem>
-                                                    <asp:ListItem Value="Y">Y_保值(需拋光,TN腹膜)</asp:ListItem>
-                                                    </asp:DropDownList>
+                    <asp:ListItem Value="R">R_精緻洗車</asp:ListItem>
+                    <asp:ListItem Value="M">M_磁土美容</asp:ListItem>
+                    <asp:ListItem Value="S">S_超值美容</asp:ListItem>
+                    <asp:ListItem Value="A">A_小美容</asp:ListItem>
+                    <asp:ListItem Value="B">B_覆膜專案</asp:ListItem>
+                    <asp:ListItem Value="L">L_亮新專案</asp:ListItem>
+                    <asp:ListItem Value="N">N_亮新專案Ⅱ</asp:ListItem>
+                    <asp:ListItem Value="I">I_內裝美容</asp:ListItem>
+                    <asp:ListItem Value="E">E_引擎室深度清潔</asp:ListItem>
+                    <asp:ListItem Value="G">G_玻璃油膜處理</asp:ListItem>
+                    <asp:ListItem Value="C">C_速霸陸/馬自達 磁土美容</asp:ListItem>
+                    <asp:ListItem Value="J">J_速霸陸/馬自達 小美容</asp:ListItem>
+                    <asp:ListItem Value="P">P_速霸陸/馬自達 覆膜處理</asp:ListItem>
+                    <asp:ListItem Value="T">T_速霸陸/馬自達 新車覆膜</asp:ListItem>
+                    <asp:ListItem Value="K">K_速霸陸/馬自達 大美容</asp:ListItem>
+                    <asp:ListItem Value="H">H_速霸陸/馬自達 內裝美容</asp:ListItem>
+                    <asp:ListItem Value="F">F_速霸陸/馬自達 引擎室深度清潔</asp:ListItem>
+                    <asp:ListItem Value="D00">D_和榮</asp:ListItem>
+                    <asp:ListItem Value="W">W_保值(新車,TN腹膜)</asp:ListItem>
+                    <asp:ListItem Value="Y">Y_保值(需拋光,TN腹膜)</asp:ListItem>
+                    <asp:ListItem Value="O">O_玻璃鍍膜</asp:ListItem>
+                    <asp:ListItem Value="Q">Q_玻璃鍍膜</asp:ListItem>
+                    </asp:DropDownList>
             <asp:DropDownList ID="_ddl洗車種類" runat="server" AutoPostBack="True" OnSelectedIndexChanged="_ddl洗車種類_SelectedIndexChanged" 
                     Width="350px" Font-Bold="True" Font-Size="11pt">
                                                     </asp:DropDownList></td>

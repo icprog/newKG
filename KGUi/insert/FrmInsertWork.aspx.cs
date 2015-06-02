@@ -95,6 +95,19 @@ namespace KGUi.insert
                 _rdo是否招攬.SelectedValue = "是";
                 _txt介紹人.Visible = true;
 
+                CUser l_user = Session[SealedGlobalPage.SESSIONKEY_LOGIN_USER_DATA] as CUser;
+                if (l_user.f_branch所別名稱.IndexOf("所") > 0)
+                {
+                    _txt顧客名稱.Enabled = true;
+                    _lbl引擎號碼和車牌.Text = "引擎號碼";
+                }
+                else
+                {
+                    _txt顧客名稱.Enabled = false;
+                    _lbl引擎號碼和車牌.Text = "車牌號碼";
+                }
+                
+
                 _ddl洗車種類0.Items.Clear();
                 _ddl洗車種類0.Items.Add(new ListItem("", ""));
                 _ddl洗車種類0.Items.Add(new ListItem("W_保值(新車,TN腹膜)", "W"));
@@ -265,7 +278,7 @@ namespace KGUi.insert
             
             try
             {
-                if ("新車".Equals(_lbl工單種類.Text) || "試乘".Equals(_lbl工單種類.Text))
+                if ("新車".Equals(_lbl工單種類.Text) || "試乘".Equals(_lbl工單種類.Text) || "新車保值計畫(TN覆膜)".Equals(_lbl工單種類.Text))
                 {
                     CUser l_user = get高都員工(_txt顧客名稱.Text.Trim());
                     DataTable dt = _context.CFactoryManager.OffDutyFactory.GetData(_txt顧客名稱.Text);
@@ -295,7 +308,7 @@ namespace KGUi.insert
             try
             {
                 CUser l_user = get高都員工(_txt介紹人.Text.Trim());
-                DataTable dt = _context.CFactoryManager.OffDutyFactory.GetData(_txt顧客名稱.Text);
+                DataTable dt = _context.CFactoryManager.OffDutyFactory.GetData(_txt介紹人.Text);
 
                 if (dt.Rows.Count > 0)
                 {
@@ -349,9 +362,12 @@ namespace KGUi.insert
                     l_work.f_seruser服務專員 = _lbl服務專員.Text;
 
                     _context.CFactoryManager.CWorkFactory.insert(l_work);
-                   
-                    //新車才需要新增應收帳款
-                    if ("新車".Equals(_lbl工單種類.Text))
+
+
+                    CUser l_user = Session[SealedGlobalPage.SESSIONKEY_LOGIN_USER_DATA] as CUser;
+
+                    //新車才需要新增應收帳款還有業代的招攬附魔  Important !!! By Fox
+                    if ("新車".Equals(_lbl工單種類.Text) || ("新車保值計畫(TN覆膜)".Equals(_lbl工單種類.Text) && l_user.f_branch所別名稱.IndexOf("所") > 0))
                     {
                         新增應收帳款(l_work);
                     }
@@ -459,7 +475,7 @@ namespace KGUi.insert
             {
                 if (_txt引擎號碼.Text.IndexOf("-") < 0)
                 {
-                    ScriptManager.RegisterClientScriptBlock(UpdatePanel1, typeof(UpdatePanel), "OK", "alert('車牌請加上-號');", true);
+                    //ScriptManager.RegisterClientScriptBlock(UpdatePanel1, typeof(UpdatePanel), "OK", "alert('車牌請加上-號');", true);
                 }
             }
         }
