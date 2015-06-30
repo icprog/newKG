@@ -42,6 +42,10 @@ namespace tw.com.kg.lib
             {
                 l_sql += " where f_worktype in ('B1','B2','B3','B4','B5','W1','W2','W3','W4','W5','Y1','Y2','Y3','Y4','Y5')";//只抓取覆膜代碼
             }
+            else if ("C".Equals(p_str洗車別))
+            {
+                l_sql += " where f_worktype in ('O1','O2','O3','O4','O5','Q1','Q2','Q3','Q4','Q5')";
+            }
 
 
                 //l_sql += " and w.f_closedate <> ''";//完工才計算

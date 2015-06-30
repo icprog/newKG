@@ -106,6 +106,7 @@
                             <asp:ListItem Selected="True" Text="亮新" Value=""></asp:ListItem>
                             <asp:ListItem Text="小美容" Value="A"></asp:ListItem>
                             <asp:ListItem Text="覆膜" Value="B"></asp:ListItem>
+                            <asp:ListItem Text="玻璃鍍膜" Value="C"></asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
