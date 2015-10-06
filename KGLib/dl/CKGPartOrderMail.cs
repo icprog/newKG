@@ -49,7 +49,7 @@ namespace tw.com.kg.lib
             l_mail = new MailMessage();
             if ("KC".Equals(p_codes.f_Vendor請購廠商) || "KCF".Equals(p_codes.f_Vendor請購廠商) || "KCF".Equals(p_codes.f_Vendor請購廠商) || "亙長".Equals(p_codes.f_Vendor請購廠商))
             {
-                iv_strMailTo收件者 = "kcd.k4337@msa.hinet.net";
+                iv_strMailTo收件者 = "AFM9922@toyota.com.tw";
                 iv_strMailTo收件者_備份 = "kengchang4337@gmail.com";
             }
             else if ("PDS".Equals(p_codes.f_Vendor請購廠商) || "PDS".Equals(p_codes.f_Vendor請購廠商))
