@@ -711,8 +711,8 @@ namespace tw.com.kg.lib
         /// <returns></returns>
         public CKGPartOrder[] getGroupBy未訂購所別筆數(string p_str廠商, string p_str所別)
         {
-            //string l_strSql = " SELECT f_branchid,f_Vendor,Count(f_ExchangeID) as NonSendConut FROM [KG].[dbo].[tbKGPartOrder] WHERE f_IsSend='False'";//狀態False者表示尚未訂購
-            string l_strSql = " SELECT f_branchid,f_Vendor,Count(f_ExchangeID) as NonSendConut FROM [KG].[dbo].[tbKGPartOrder] WHERE f_exchangeid = 'EF21S20131105830' ";//狀態False者表示尚未訂購
+            string l_strSql = " SELECT f_branchid,f_Vendor,Count(f_ExchangeID) as NonSendConut FROM [KG].[dbo].[tbKGPartOrder] WHERE f_IsSend='False'";//狀態False者表示尚未訂購
+            //string l_strSql = " SELECT f_branchid,f_Vendor,Count(f_ExchangeID) as NonSendConut FROM [KG].[dbo].[tbKGPartOrder] WHERE f_exchangeid = 'EF21S20131105830' ";//狀態False者表示尚未訂購
 
             if (!"".Equals(p_str廠商))
             {

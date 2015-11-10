@@ -273,14 +273,16 @@ namespace tw.com.kg.lib
         public CWork[] get工單資訊By薪資(string p_strsmid, string p_strBDate , string p_strEDate)
         {
             string l_Sql = "";
-            l_Sql += "select * from tbWork ";
-            l_Sql += "where f_workid in";
-            l_Sql += " (select f_workid from tbConstruction where f_smid = '" + p_strsmid + "')";
+            l_Sql += "select  work.* from tbWork as work ";
+            l_Sql += " join tbConstruction as cons on cons.f_workid = work.f_workid ";
+            l_Sql += "WHERE cons.f_smid = '" + p_strsmid + "'";
+            //fix by fox 增加速度
+            //l_Sql += " (select f_workid from tbConstruction where f_smid = '" + p_strsmid + "')";
             if (!"".Equals(p_strBDate))
             {
-                l_Sql += " and f_closeDate between '" + p_strBDate + "' and '" + p_strEDate + "'";
+                l_Sql += " and work.f_closeDate between '" + p_strBDate + "' and '" + p_strEDate + "'";
             }
-            l_Sql += " order by  f_editdate";
+            //l_Sql += " order by  f_editdate";
             return queryBySql(l_Sql);
         }
 
