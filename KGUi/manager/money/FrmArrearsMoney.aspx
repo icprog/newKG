@@ -116,6 +116,16 @@ a {
                             <asp:Label ID="Label27" runat="server" Text='<%# Eval("姓名")%>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
+                    <asp:TemplateField HeaderText="洗車款項">
+                        <ItemTemplate>
+                            <asp:Label ID="Label371" runat="server" Text='<%# Eval("洗車款項")%>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="小百貨款項">
+                        <ItemTemplate>
+                            <asp:Label ID="Label372" runat="server" Text='<%# Eval("小百貨款項")%>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="應收金額">
                         <ItemTemplate>
                             <asp:Label ID="Label37" runat="server" Text='<%# Eval("應收金額")%>'></asp:Label>

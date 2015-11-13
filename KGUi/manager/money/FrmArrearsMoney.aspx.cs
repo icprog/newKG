@@ -99,7 +99,7 @@ namespace KGUi.manager.money
         private DataTable getDataTableByDisplay(C欠款紀錄[] p_欠款紀錄)
         {
 
-            string[] l_Msg = new string[] { "項次", "據點", "員編", "姓名", "應收金額", "剩餘點數", "實收金額", "明細" };
+            string[] l_Msg = new string[] { "項次", "據點", "員編", "姓名", "應收金額", "洗車款項", "小百貨款項", "剩餘點數", "實收金額", "明細" };
             DataTable l_dt = CTools.getFilledColumnsDataTable(l_Msg);
 
 
@@ -112,6 +112,8 @@ namespace KGUi.manager.money
                 l_row["姓名"] = p_欠款紀錄[i].名稱;
                 l_row["應收金額"] = p_欠款紀錄[i].金額;
                 l_row["剩餘點數"] = p_欠款紀錄[i].剩餘點數;
+                l_row["洗車款項"] = p_欠款紀錄[i].洗車款項;
+                l_row["小百貨款項"] = p_欠款紀錄[i].小百貨款項;
                 if (String.IsNullOrEmpty(p_欠款紀錄[i].剩餘點數))
                 {
                     p_欠款紀錄[i].剩餘點數 = "0";
