@@ -89,12 +89,14 @@ namespace KGUi.manager.money
             {
                 for (int i = 0; i < p_work.Length; i++)
                 {
+                    CKGPartOrder lCustomerName = _context.CFactoryManager.CKGPartOrderFactory.
+                            get顧客姓名ByEngo(p_work[i].f_engo引擎號碼);
+
                     DataRow l_row = l_dt.NewRow();
                     l_row["日期"] = p_work[i].f_editdate開單日期;
                     l_row["單號"] = p_work[i].f_workid工單單號;
                     l_row["產品名稱/引擎號碼"] = p_work[i].f_engo引擎號碼;
-                    l_row["顧客姓名"] = _context.CFactoryManager.CKGPartOrderFactory.
-                            get顧客姓名ByEngo(p_work[i].f_engo引擎號碼).f_customername顧客姓名;
+                    l_row["顧客姓名"] = lCustomerName == null ? "" : lCustomerName.f_customername顧客姓名;
 
                     l_row["金額"] = p_work[i].f_money金額;
                     l_row["產品編號/洗車總類"] = p_work[i].f_workType洗車種類;

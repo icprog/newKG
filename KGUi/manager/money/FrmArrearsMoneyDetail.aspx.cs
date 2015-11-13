@@ -159,21 +159,22 @@ namespace KGUi.manager.money
             string[] l_Msg = new string[] { "項次", "單號", "金額", "引擎號碼", "顧客姓名", "洗車總類", "開單人員" };
             DataTable l_dt = CTools.getFilledColumnsDataTable(l_Msg);
 
-            //for (int i = 0; i < p_欠款紀錄.Length; i++)
-            //{
+            //fix by fox
+            CKGPartOrder lCustomerName = _context.CFactoryManager.CKGPartOrderFactory.
+                                            get顧客姓名ByEngo(p_work.f_engo引擎號碼);
+
             DataRow l_row = l_dt.NewRow();
             l_row["項次"] = "1";
             l_row["單號"] = p_work.f_workid工單單號;
             l_row["引擎號碼"] = p_work.f_engo引擎號碼;
-            l_row["顧客姓名"] = _context.CFactoryManager.CKGPartOrderFactory.
-                    get顧客姓名ByEngo(p_work.f_engo引擎號碼).f_customername顧客姓名;
+            l_row["顧客姓名"] = (lCustomerName == null) ? "" : lCustomerName.f_customername顧客姓名;
 
             l_row["金額"] = p_work.f_money金額;
             l_row["洗車總類"] = p_work.f_workType洗車種類;
             l_row["開單人員"] =_context.CFactoryManager.CUserFactory.get高都員工檔(
                 p_work.f_edituser開單人員 ).f_username姓名;
             l_dt.Rows.Add(l_row);
-            //}
+
             return l_dt;
         }
 
